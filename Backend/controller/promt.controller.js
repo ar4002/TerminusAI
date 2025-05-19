@@ -50,6 +50,7 @@ const MODEL_NAME = "deepseek-r1:1.5b"; // or whatever model you pulled in Ollama
 
 export const sendPromt = async (req, res) => {
   const { content } = req.body;
+  const userId=req.userId;
   console.log("Prompt sending...");
 
   if (!content || content.trim().length === 0) {
@@ -59,6 +60,7 @@ export const sendPromt = async (req, res) => {
   try {
     // Save user prompt
     const userPrompt = await Promt.create({
+      userId,
       role: "user",
       content,
     });
@@ -75,6 +77,7 @@ export const sendPromt = async (req, res) => {
 
     // Save AI response
     const aiMessage = await Promt.create({
+      userId,
       role: "assistant",
       content: aiContent,
     });
@@ -84,4 +87,4 @@ export const sendPromt = async (req, res) => {
     console.error("Error in sendPromt function", error.message || error);
     return res.status(500).json({ error: "Something went wrong with AI response" });
   }
-};
+}; 
