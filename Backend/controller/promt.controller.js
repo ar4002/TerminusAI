@@ -1,46 +1,4 @@
-// 
 
-
-// import { Promt } from "../model/promt.model.js";
-
-// const openai = new OpenAI({
-//         baseURL: 'https://api.deepseek.com',
-//         apiKey: process.env.OPENAI_API_KEY
-// });
-// console.log("openai",openai.apikey);
-// export const sendPromt= async(req,res)=>{
-//     const {content} = req.body;
-//     console.log("promt sending ...");
-
-// if(!content||content.trim().length===""){
-//         return res.status(400).json({error:"Please provide a prompt"});
-//     }
-//     try{
-//         // userPromt  me promt save kra 
-//         const userPromt=await Promt.create({
-//             role:"user",
-//             content
-//         })
-
-
-//         const completion = await openai.chat.completions.create({
-//     messages: [{ role: "user", content: content }],
-//     model: "deepseek-chat",
-//   });
-
-
-//   const aiContent=completion.choices[0].message.content;
-//       const aiMessage=await Promt.create({
-//             role:"user",
-//             content:aiContent
-//         })
-//        return res.status(200).json({reply :aiContent});
-//     }catch(error){
-//         console.log("Error in sendPromt function",error);
-//         return res.status(500).json({error:"something went wrongn with AI response "});
-//     }
-
-// };
 
 import axios from "axios";
 import { Promt } from "../model/promt.model.js";

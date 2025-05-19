@@ -14,7 +14,7 @@ function Login() {
 
 
     const [error, setError] = useState("")
-    const [loadind, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     const navigate=useNavigate()
 
     const [,setAuthUser]=useAuth();
@@ -91,7 +91,7 @@ setFormData({
                 {/*error msg*/}
                      {error && <span className='text-red-600 text-sm mb-4 '>{error}</span>}
                 {/*Terms & Condition*/}
-                <p className='text-xs text-gray-400 mt-4 mb-6 '>By signing up or logging in, you consent to Terminus{""}
+                <p className='text-xs text-gray-400 mt-4 mb-6 '>By signing up or logging in, you consent to Terminus {" "}
                     <a className='undeline ' href="Terms of Use" ></a>and  <a className='underline' href="Privacy Policy"></a>.</p>
 
                 {/*Login button*/}

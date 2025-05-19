@@ -14,7 +14,7 @@ function Signup() {
 
 
     const [error, setError] = useState("")
-    const [loadind, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     const navigate=useNavigate()
 
 const handleChange=(e)=>{

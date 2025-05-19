@@ -1,5 +1,6 @@
 Backend/*.log
 Backend/logs
+Backend/.env
 Backend/npm-debug.log*
 Backend/yarn-debug.log*
 Backend/yarn-error.log*
